@@ -1,4 +1,4 @@
-TAG ?= 1.0
+TAG ?= 2.0
 newtag ?= latest
 image = strues/alpine-base
 

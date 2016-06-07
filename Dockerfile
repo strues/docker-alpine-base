@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Steven Truesdell <steven@strues.io>
 
 ENV \
@@ -16,7 +16,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
     # `app` user and group with OS X-compatible IDs
     && addgroup -g 50 app \
-    && adduser -D -G app -s /bin/ash -u 1000 app \
+    && adduser -D -G app -s /bin/bash -u 1000 app \
     && apk del tzdata \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /app \
